@@ -6,11 +6,58 @@
 </head>
 <body>
   <script>
-    function multiply(sentence) {
-      answer = sentence.charAt(sentence.length - 1)
-      return answer
+    function getUserInput() {
+      let userInput = prompt("Please type Rock, Paper, or Scissors")
+      first_letter = userInput.charAt(0)
+      userInput = userInput.slice(1)
+      userInput = userInput.toLowerCase()
+      first_letter = first_letter.toUpperCase()
+      userInput = first_letter + userInput
+      if (userInput != "Rock" && userInput != "Paper" && userInput != "Scissors") {
+        return "Please select a valid choice"
+      }
+      else 
+      return userInput
     }
-    console.log(multiply("hELLO WORLD"))
+
+    function getComputerChoice() {
+      let choices = ["Rock", "Paper", "Scissors"]
+      console.log(choices[(Math.floor(Math.random()*choices.length))])
+    }    
+
+    function oneRound(getComputerChoice, getUserInput) {
+      if (getComputerChoice == "Rock") {
+        if (getUserInput == "Rock") {
+          return "Tie! You both picked " + getComputerChoice
+        }
+        else if (getUserInput == "Paper") {
+          return "You won! " + getUserInput + " beats " + getComputerChoice
+        }
+        else 
+          return "You lost! " + getComputerChoice + " beats " + getUserInput
+      }
+      else if (getComputerChoice == "Paper") {
+        if (getUserInput == "Paper") {
+          return "Tie! You both picked " + getComputerChoice
+        }
+        else if (getUserInput == "Scissors") {
+          return "You won! " + getUserInput + " beats " + getComputerChoice
+        }
+        else 
+          return "You lost! " + getComputerChoice + " beats " + getUserInput
+      }
+      else if (getComputerChoice == "Scissors") {
+        if (getUserInput == "Scissors") {
+          return "Tie! You both picked " + getComputerChoice
+        }
+        else if (getUserInput == "Rock") {
+          return "You won! " + getUserInput + " beats " + getComputerChoice
+        }
+        else 
+          return "You lost! " + getComputerChoice + " beats " + getUserInput
+      }
+    }
+
   </script>
 </body>
 </html>
