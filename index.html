@@ -3,13 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Page Title</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="containter">
-  <button id = "Rock" class="button">Rock</button>
-  <button id = "Paper" class="button">Paper</button>
-  <button id = "Scissors" class="button">Scissors</button>
-</div>
+  <h1>Rock Paper Scissors</h1>
+  <div id = "roundResult"></div>
+  <div id = "score"></div>
+  <div class = "buttonContainer">
+    <button id = "Rock" class="rock">
+      <img src="images/rock.png" alt="Picture of rock">
+    </button>
+    <button id = "Paper" class="button">
+      <img src="images/paper.png" alt="Picture of paper">
+    </button>
+    <button id = "Scissors" class="button">
+      <img src="images/scissor.png" alt="Picture of scissor">
+    </button>
+  </div>
+  <div id = "result"></div>
   <script src="script.js">
   </script>
 </body>
