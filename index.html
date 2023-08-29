@@ -5,93 +5,12 @@
   <title>Page Title</title>
 </head>
 <body>
-  <script>
-    /* sets the scores to 0 for both the player and the computer */
-      let playerScore = 0
-      let computerScore = 0
-
-    /* gets the user input and makes sure it's case insensitive */
-    function getUserInput() {
-      let userInput = prompt("Please type Rock, Paper, or Scissors")
-      first_letter = userInput.charAt(0)
-      userInput = userInput.slice(1)
-      userInput = userInput.toLowerCase()
-      first_letter = first_letter.toUpperCase()
-      userInput = first_letter + userInput
-      if (userInput != "Rock" && userInput != "Paper" && userInput != "Scissors") {
-        return "Please select a valid choice"
-      }
-      else 
-      return userInput
-    }
-
-    /* randomly selects option for computer */
-    function getComputerChoice() {
-      let choices = ["Rock", "Paper", "Scissors"]
-      return choices[(Math.floor(Math.random()*choices.length))]
-    }    
-
-    /* plays one round for and adds a point to the score */
-    function oneRound() {
-      playerSelection = getUserInput()
-      computerSelection = getComputerChoice()
-      if (computerSelection == "Rock") {
-        if (playerSelection == "Rock") {
-          return "Tie! You both picked " + computerSelection
-        }
-        else if (playerSelection == "Paper") {
-          playerScore = playerScore + 1
-          return "You won! " + playerSelection + " beats " + computerSelection
-
-        }
-        else if (playerSelection == "Scissors") {
-          computerScore = computerScore + 1
-          return "You lost! " + computerSelection + " beats " + playerSelection
-        }
-        else 
-        return "Please select a valid choice"
-      }
-      else if (computerSelection == "Paper") {
-        if (playerSelection == "Paper") {
-          return "Tie! You both picked " + computerSelection
-        }
-        else if (playerSelection == "Scissors") {
-          playerScore = playerScore + 1
-          return "You won! " + playerSelection + " beats " + computerSelection
-        }
-        else if (playerSelection == "Rock") {
-          computerScore = computerScore + 1
-          return "You lost! " + computerSelection + " beats " + playerSelection
-        }
-        else
-        return "Please select a valid choice"
-      }
-      else if (computerSelection == "Scissors") {
-        if (playerSelection == "Scissors") {
-          return "Tie! You both picked " + computerSelection
-        }
-        else if (playerSelection == "Rock") {
-          playerScore = playerScore + 1
-          return "You won! " + playerSelection + " beats " + computerSelection
-        }
-        else if (playerSelection == "Paper") {
-          computerScore = computerScore + 1
-          return "You lost! " + computerSelection + " beats " + playerSelection
-        }
-        else
-        return "Please select a valid choice"
-      }
-    }
-    
-    /* game keeps going until someone reaches a score of 5 */
-    function game() {
-      while (playerScore < 5 && computerScore < 5) {
-        console.log(oneRound())
-        console.log("The score is " + playerScore + " to " + computerScore) 
-      }
-      
-    }
-    console.log(game())
+<div id="containter">
+  <button id = "Rock" class="button">Rock</button>
+  <button id = "Paper" class="button">Paper</button>
+  <button id = "Scissors" class="button">Scissors</button>
+</div>
+  <script src="script.js">
   </script>
 </body>
 </html>
